@@ -1,24 +1,17 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import Root from './Root.jsx';
-import './index.css';
+// src/index.tsx
+import { createRoot } from 'react-dom/client'
+import React from 'react'
+import './index.css'
+import Root from './Root.jsx'
 
-// Environnement de test (jsdom) → on s'assure que #root existe
 function ensureRoot() {
-  let el = document.getElementById('root');
-  if (!el) {
-    el = document.createElement('div');
-    el.id = 'root';
-    document.body.appendChild(el);
-  }
-  return el;
+  const el = document.getElementById('root')
+  if (!el) throw new Error('Root div not found')
+  return el
 }
 
 createRoot(ensureRoot()).render(
-  <StrictMode>
-    <BrowserRouter>
-      <Root />
-    </BrowserRouter>
-  </StrictMode>
-);
+  <React.StrictMode>
+    <Root />
+  </React.StrictMode>
+)

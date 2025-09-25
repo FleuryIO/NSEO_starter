@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar.jsx";
+import Intention from "./Intention.jsx";
 
 export default function App() {
   const [dark, setDark] = useState(false);
@@ -18,7 +19,11 @@ export default function App() {
 
       <main className="p-6 text-center">
         <h1 className="text-3xl font-bold mb-4">🚀 NSEO Starter</h1>
-        <p className="text-lg">Ton environnement React + Vite + Tailwind est prêt.</p>
+        <p className="text-lg mb-8">
+          Ton environnement React + Vite + Tailwind est prêt.
+        </p>
+
+        <Intention />
       </main>
     </div>
   );
